@@ -106,12 +106,37 @@ function tProfile(){
         }
         else{
             let renderVar = render(employeeList);
-            //call function to create Html page
+            writeToFile("output/team.html", renderVar);
         }
 
     })
 
 }
+// Function to add the employees positon and prompt questions data to the Employee list array.
+function createArray(answer){
+    if(answer.role === "Manager"){
+        var newEmployee = new Manager(answer.name, answer.id, answer.email, answer.officeNumber);
+        employeeList.push(newEmployee);
+    }
+    else if(answer.role === "Engineer"){
+        var newEmployee = new Engineer(answer.name, answer.id, answer.email, answer.github);
+        employeeList.push(newEmployee);
+    }
+    else if(answer.role === "Intern"){
+        var newEmployee = new Intern(answer.name, answer.id, answer.email, answer.school);
+        employeeList.push(newEmployee);
+    }
 
+    return;
+}
+// Function to create the the Html page with the added Data. 
+function writeToFile(fileName, data) {
+      fs.writeFile(fileName, data, function(err) {
+          if(err){
+            return console.log('There was an error when trying to write the file.');
+          }
+          console.log('Created output/team.html file.');
+      } )
+}
 // Run the function to create the team employees profiles
 tProfile();
