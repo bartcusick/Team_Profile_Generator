@@ -33,3 +33,85 @@ const render = require("./lib/htmlRenderer");
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
+
+//Empty array, employee data is added to this list.
+const employeeList = [];
+
+// Ask Questions
+const questions = [
+    {
+        type: "list",
+        name: "role",
+        message: "What is your Title at work: ",
+        choices: ["Manager", "Engineer", "Intern"]
+    },
+    {
+    type: "input",
+    name: "name",
+    message: "Enter First/Last name:"
+    },
+    {
+    type: "input",
+    name: "id",
+    message: "Enter Employee id:"
+    },
+    {
+    type: "input",
+    name: "email",
+    message: "Enter an email:"
+    },
+    {
+        when: answer => {
+            return answer.role === "Manager"
+        },
+        type: "input",
+        name: "officeNumber",
+        message: "Enter Office Number:"
+    },
+    {
+        when: answer => {
+            return answer.role === "Engineer"
+        },
+        type: "input",
+        name: "github",
+        message: "Enter GitHub User name:"
+    },
+    {
+        when: answer => {
+            return answer.role === "Intern"
+        },
+        type: "input",
+        name: "school",
+        message: "Enter School Name:"
+    },
+    {
+    type: "list",
+    name: "addEmployee",
+    message: "Would you like to add someone else?",
+    choices: ["Yes", "No"]
+    }
+
+]
+
+//Function to create the team profile. 
+function tProfile(){
+    inquirer.prompt(questions)
+
+    .then(function(answer){
+        createArray(answer);
+
+        if(answer.addEmployee === "Yes"){
+            tProfile();
+        }
+        else{
+            let renderVar = render(employeeList);
+            //call function to create Html page
+        }
+
+    })
+
+}
+
+// Run the function to create the team employees profiles
+tProfile();
