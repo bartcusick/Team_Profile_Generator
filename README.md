@@ -11,7 +11,7 @@ Created a CLI (Command Line Interface) application that will generate an html fi
 - [GitHub Info](#GitHub) 
 
 ## Screenshots
-![Sample HTML](assets/Team_Profile_Generator.png)
+![Sample HTML](Assets/Team_Profile_Generator.png)
 ## Installation
         npm install
 ## Usage
