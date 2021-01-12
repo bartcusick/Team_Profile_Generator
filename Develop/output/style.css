@@ -1,0 +1,51 @@
+
+  .whiteish {
+    background: #F0F3F2;
+    /* padding: 5px;
+    display: block;
+    padding: 10px;  */
+  }
+  .blueish {
+    background: #5C9ECD;
+    /* padding: 5px;
+    display: block;
+    padding: 10px;  */
+  }
+  .orangeish {
+    color: #1B334D;
+    background: #E99F46; 
+    border: 5px solid #1B334D;
+    border-style: clear;
+    /* padding: 5px;
+    display: block;
+    padding: 10px;  */
+  }
+  .brownish {
+    background: #775754;
+    padding: 5px;
+    display: block;
+    padding: 10px; 
+  }
+  .darkBlueish {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 20px;
+    background: #1B334D;
+    padding: 5px;
+    display: block;
+    padding: 10px; 
+    border-radius: 20px;
+  }
+  .darkBlueish2 {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 20px;
+    color: #F0F3F2;
+    background: #1B334D;
+    /* padding: 5px;
+    display: block;
+    padding: 10px;  */
+  }
+  .cardSpace {
+    padding: 5px;
+    display: block;
+    padding: 10px; 
+  }
